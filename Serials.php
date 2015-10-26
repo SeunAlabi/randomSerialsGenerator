@@ -26,6 +26,7 @@ class Serials{
 	// }
 	
 	
+	
 	//generates random strings of characters based on the given length
 	public function randGenerator($length) {
         mt_srand((double)microtime() * 1000000); 
@@ -37,6 +38,7 @@ class Serials{
 		return($randompass);
 		}
 
+		//generates series of unique serials, then saves them in the database
 	public function getSerial($manufacturerId, $numberOfSerials){
 			for($i=0; $i<$numberOfSerials; $i++){
 				$randomString = self::randGenerator(8);

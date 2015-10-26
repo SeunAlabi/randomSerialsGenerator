@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2015 at 11:30 AM
+-- Generation Time: Oct 23, 2015 at 06:06 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `manufacturerName` varchar(50) NOT NULL,
   `manufacturerId` varchar(2) NOT NULL,
+  `active` int(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
@@ -37,17 +38,17 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
 -- Dumping data for table `manufacturer`
 --
 
-INSERT INTO `manufacturer` (`id`, `manufacturerName`, `manufacturerId`) VALUES
-(1, 'botosoft', '10'),
-(2, 'microsoft', '11'),
-(3, 'apple', '12'),
-(4, 'dell', '13'),
-(5, 'bunmi', '14'),
-(6, 'Toshiba', '15'),
-(7, 'estee', '16'),
-(8, 'New User', '17'),
-(9, 'mimi', '18'),
-(16, 'shell', '19');
+INSERT INTO `manufacturer` (`id`, `manufacturerName`, `manufacturerId`, `active`) VALUES
+(1, 'botosoft', '10', 1),
+(2, 'microsoft', '11', 1),
+(3, 'apple', '12', 1),
+(4, 'dell', '13', 1),
+(5, 'bunmi', '14', 1),
+(6, 'Toshiba', '15', 1),
+(7, 'estee', '16', 1),
+(8, 'New User', '17', 1),
+(9, 'mimi', '18', 0),
+(16, 'shell', '19', 1);
 
 -- --------------------------------------------------------
 

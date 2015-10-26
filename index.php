@@ -7,7 +7,7 @@
 require_once "connection.php";
 $con = new connection();
 $connection = $con->getConnection();
-$query = "select * from manufacturer ";
+$query = "select * from manufacturer where active=1";
 $result = $connection->query($query) or die(mysqli_error($connection));
 ?>
 
