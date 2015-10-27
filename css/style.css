@@ -1,0 +1,45 @@
+body{
+	background-image: url("images/back.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;	 
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.head{
+	background-color : #002269;
+	height: 60px;
+	padding-left : 150px;
+	padding-top: 15px;
+	color : white;
+	font-weight : bold;
+	font-size: 30px;
+}
+#nav{
+	margin-top: 30px;
+	font-family: "Times New Roman", Times, serif;
+}
+#nav  div{	
+	line-height : 80px;	
+}
+
+#nav a{
+	color : #000;
+	font-size: 15px;
+	text-decoration: none;
+	padding-left:30px;
+}
+
+.main{
+	border-radius : 20px;
+	height : 400px;
+	background-color : #002269;
+	margin-left : -80px;
+}
+#center{
+	padding :100px 30px 0 30px;
+}
+.active{
+	/*background: linear-gradient(to right, black , #585858); /* Standard syntax (must be last) */
+	/*background: linear-gradient(to left, rgba(0, 34, 105,1), rgba(218, 243, 253,0)); /* Standard syntax (must be last) */
+	background: linear-gradient(to right, rgba(222,239,255,1) 0%,rgba(222,239,255,1) 6%,rgba(0,34,105,1) 49%); /* W3C */
+	background-color :#4C4C4C;
+}
