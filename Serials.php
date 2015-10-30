@@ -30,7 +30,7 @@ class Serials{
 	//generates random strings of characters based on the given length
 	public function randGenerator($length) {
         mt_srand((double)microtime() * 1000000); 
-        $possible = 'abcdefghijklmnopqrstuvwxyz0123456789' . 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'; 
+        $possible = '0123456789'; 
         $randompass =""; 
         while(strlen($randompass) < $length) {
                 $randompass .= substr($possible, mt_rand(0, strlen($possible) -1), 1); 
@@ -40,13 +40,21 @@ class Serials{
 
 		//generates series of unique serials, then saves them in the database
 	public function getSerial($manufacturerId, $numberOfSerials){
-			for($i=0; $i<$numberOfSerials; $i++){
+		$count = 0;
+		while($count < $numberOfSerials){
 				$randomString = self::randGenerator(8);
 				$productId = $manufacturerId.$randomString;	
-				
-				//saves manufacturerId and productId into the database
-				$query = "insert into serials values(null, '$manufacturerId', '$productId')";
+				$query = "select * from serials where productId = $productId" ;
 				$result = $this->connection->query($query) or die(mysqli_error($this->connection));
+				if (mysqli_num_rows($result)>0){
+					$count -=1;
+				}
+				else{
+				//saves manufacturerId and productId into the database
+				$new_query = "insert into serials values(null, '$manufacturerId', '$productId')";
+				$new_result = $this->connection->query($new_query) or die(mysqli_error($this->connection));
+				}
+				$count++;
 			}
 		}
 }
